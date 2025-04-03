@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space in flavours - by 𝓴𝓲𝓼𝓾𝓾</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --content-bg: #1e1e1e;
+            --border-color: #333;
+            --text-color: #eee;
+            --heading-color: #fff;
+            --link-color: #80cbc4;
+            --placeholder-bg: #666;
+            --placeholder-text: #ccc;
+            --tag-bg: #37474f;
+            --tag-text: #b0bec5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .page-container {
+            max-width: 70vw;
+            margin: auto;
+            padding: 2rem;
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            flex-grow: 1;
+        }
+
+        header.game-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            position: relative;
+        }
+
+        header.game-header h1 {
+            font-size: 2.5rem;
+            color: var(--heading-color);
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        header.game-header h1 img {
+            height: 2.5rem;
+			border-radius: 50%;
+            margin-bottom: 5px;
+			object-fit: cover;
+        }
+
+        header.game-header .creator-link {
+            font-size: 1.1rem;
+            color: var(--link-color);
+            text-decoration: none;
+			display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header.game-header .creator-link:hover {
+            text-decoration: underline;
+        }
+
+		header.game-header .creator-link img {
+			width: 1.2rem;
+			height: 1.2rem;
+			border-radius: 50%;
+			margin-left: 0.5rem;
+			object-fit: cover;
+		}
+
+        .main-content-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .primary-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .banner {
+            background-color: var(--placeholder-bg);
+            color: var(--placeholder-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 4px;
+            border: 1px dashed #888;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            margin-bottom: 1.5rem;
+        }
+
+        .screenshot {
+            background-color: var(--placeholder-bg);
+            color: var(--placeholder-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 4px;
+            border: 1px dashed #888;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-description h2 {
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .game-description p {
+            margin-bottom: 1rem;
+        }
+
+        .game-description ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content-area {
+                flex-direction: column;
+            }
+
+            .primary-column {
+                flex: none;
+                width: 100%;
+                min-width: unset;
+            }
+
+            header.game-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 20%);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            z-index: -1;
+
+            --rand1: calc(Math.random() * 100);
+            --rand2: calc(Math.random() * 100);
+            --rand3: calc(Math.random() * 100);
+            --rand4: calc(Math.random() * 100);
+            --rand5: calc(Math.random() * 100);
+            --rand6: calc(Math.random() * 100);
+            --rand7: calc(Math.random() * 100);
+            --rand8: calc(Math.random() * 100);
+
+            background-position: var(--rand1) var(--rand2), var(--rand3) var(--rand4), var(--rand5) var(--rand6), var(--rand7) var(--rand8);
+			animation: pan 10s infinite linear;
+        }
+
+		@keyframes pan {
+			100% {
+				background-position: calc(var(--rand1) * -1) calc(var(--rand2) * -1), calc(var(--rand3) * -1) calc(var(--rand4) * -1), calc(var(--rand5) * -1) calc(var(--rand6) * -1), calc(var(--rand7) * -1) calc(var(--rand8) * -1);
+			}
+		}
+
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="game-header">
+            <h1>Space in flavours <img src="https://media.discordapp.net/attachments/1352411050116513834/1357490968013701283/T1_ROGUE__Fragger2.png?ex=67f0657b&is=67ef13fb&hm=8dd183d5ec86480c8e08370cdcad994cec862c268b3c7550fae0acea19c1a023&=&format=webp&quality=lossless" alt="Game Icon"></h1>
+			<a href="https://penguinmod.com/profile/?user=kisuuu" class="creator-link">by 𝓴𝓲𝓼𝓾𝓾<img src="https://cdn.discordapp.com/avatars/718720315403927562/28c8c3c8f8ec381d0b1edb80004b681a?size=1024" alt="Creator Icon"></a>
+        </header>
+
+        <div class="main-content-area">
+            <div class="primary-column">
+                <div class="banner">
+                    Game Banner
+                </div>
+
+                <div class="screenshot-gallery">
+                    <div class="screenshot"><img src="https://media.discordapp.net/attachments/1352411050116513834/1357494028001869924/image.png?ex=67f06855&is=67ef16d5&hm=65f9c1e2f72d242ed3f0c3d964f487d4ac5d26468c4145833b35328a3cca0c15&=&format=webp&quality=lossless&width=1439&height=811" alt="Screenshot 1" style="width: 100%; height: auto;"></div>
+                    <div class="screenshot"><img src="https://media.discordapp.net/attachments/1352411050116513834/1357494227877105834/image.png?ex=67f06884&is=67ef1704&hm=42f5234baede3dacc3884f8329e8b2c5950b6bb297fe71ab7b66eb743c1ccda8&=&format=webp&quality=lossless&width=1436&height=811" alt="Screenshot 2" style="width: 100%; height: auto;"></div>
+                    <div class="screenshot">Screenshot 3</div>
+                    <div class="screenshot">Screenshot 4</div>
+                </div>
+
+                <div class="game-description">
+                    <p>
+                        Space in flavours is a game made in PenguinMod, about a ship (you) soaring through the galaxy, where you can fight enemies, join factions, and mine resources.
+                    </p>
+
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>6 factions</li>
+                        <li>47 ships avaiable currently</li>
+                        <li>really cool bullet system</li>
+                        <li>working enemies that fly around you and attack you</li>
+                        <li>epic explosions</li>
+                        <li>NPC's that do nothing yet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
